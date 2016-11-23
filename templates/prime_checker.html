@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Prime Checker">
+
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+
+	<title>Prime Checker</title>
+
+	<style type="text/css">
+		body {
+			padding:80px;
+			}
+
+		span {
+			font-weight: bolder;
+			font-style: italic;
+			background-color: yellow;
+		}
+
+	</style>
+	<script type="text/javascript">
+	function retriveUI() {
+    	if (isNaN(document.getElementById("userInput").value) == true) {
+    		alert("Enter a valid Number")
+    	}
+    	else {
+    		var elem = document.getElementById("UI");
+			elem.style.color = "black";
+    		elem.innerText = document.getElementById("userInput").value;
+    		document.getElementById("submit_number").submit()
+    	}
+
+	}
+	</script>
+</head>
+<body>
+	<div class = "jumbotron jumbotron-fluid">
+		<div class="row">
+			<div class = "col-lg-4">
+				<h4>Prime checker</h4>
+			</div>
+			<div class="col-lg-8">
+				<div class="input-group">
+					<form action = "/" method = "POST" id = "submit_number">
+  						<input type="text" class="form-control" name = "number" id = "userInput" placeholder="Enter a number between 1 - 100000 number">
+  					</form>
+  					<span class="input-group-btn">
+    					<button class="btn btn-primary" type="button" onclick="retriveUI()">Check!</button>
+  					</span>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class = "row">
+			<div class = "col-lg-4">
+				<p style="font-size:15px">The number <span id = "UI">{{number}}</span> entered is a <span id = "num">{{prime}}<span></p>
+			</div>
+		</div>
+		<button class="btn btn-primary" type="button" onclick="window.location ='/history'">Search History</button>
+	</div>
+</body>
