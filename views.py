@@ -9,7 +9,8 @@ history = {}
 
 @app.route('/history')
 def hist():
-	return render_template('history.html')
+	histo = models.Hist.query.all()
+	return render_template('history.html',history=histo)
 
 
 @app.route('/check/<number>')
