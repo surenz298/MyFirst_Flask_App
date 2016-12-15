@@ -1,9 +1,8 @@
 from app import db
 
 class Hist(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    number = db.Column(db.String(20000))
-    comment = db.Column(db.String(200))
+    number = db.Column(db.String(20000), primary_key=True)
+    comment = db.Column(db.String(2000), primary_key=True)
 
     def __init__(self, number, comment):
         self.number = number

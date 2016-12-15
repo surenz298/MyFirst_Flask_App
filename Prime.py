@@ -1,4 +1,6 @@
 def isprime(x):
+		if len(x) > 17:
+			return "is more than 17 digits - Sorry"
 		x = int(x)
 		if x == 1:
 			return "1 is a special number"

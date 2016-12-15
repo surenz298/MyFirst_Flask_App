@@ -11,7 +11,7 @@
 
 	<style type="text/css">
 		body {
-			padding:80px;
+			padding:100px;
 			}
 
 		span {
@@ -19,11 +19,30 @@
 			font-style: italic;
 			background-color: yellow;
 		}
+		.btn {
+			margin-top:20px;
+		}
 	</style>
 </head>
 <body>
     <div class = "container">
         <h1> History of Prime Checker </h1>
-        <button class="btn btn-primary" type="button" onclick="window.location ='/'">Back Home</button>
+		<table>
+         	<thead>
+            	<tr>
+               		<th>Name</th>
+               		<th>Comments</th>
+            	</tr>
+         	</thead>
+         	<tbody>
+			 	{% for h in history %}
+			 	<tr>
+	 	 			<td>{{h.number}}  </td>
+	 				<td>{{h.comment}} </td>
+				</tr>
+	 			{% endfor %}
+		 	</tbody>
+	 	</table>
+        <button class="btn btn-primary" type="button" onclick="window.location ='/'">Back to Checker</button>
     </div>
 </body
