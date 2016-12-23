@@ -16,9 +16,11 @@ def hist():
 @app.route('/check/<number>')
 def check(number):
 	value = Prime.isprime(number)
-	v = models.Hist(number=number,comment=value)
-	db.session.add(v)
-	db.session.commit()
+	checking = models.Hist.query.filter_by(number=number).all()
+	if len(checking) == 0:
+		v = models.Hist(number=number,comment=value)
+		db.session.add(v)
+		db.session.commit()
 	return render_template('prime_checker.html',prime=value,number=number)
 
 @app.route('/',methods=['GET','POST'])
