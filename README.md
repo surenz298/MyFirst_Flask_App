@@ -2,6 +2,6 @@
 
 My Learning of Flask with a app
 
-http://surenz298.pythonanywhere.com/
+www.primechecker.com
 
 
